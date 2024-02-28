@@ -24,7 +24,7 @@ const server = createServer((event)=>{
         if(path === '/' || path.endsWith('.html')){
 
             const resourceLocation = path.slice(1)
-            console.log("resource location: ", resourceLocation)
+          
             const html = readFileSync(resourceLocation, 'utf-8')
             event.write('HTTP/1.1 200 OK\nContent-Type: text/html\n\n' + html)
             event.end()
