@@ -22,7 +22,7 @@ const server = createServer((event)=>{
         console.log(path)
 
         if(path === '/' || path.endsWith('.html')){
-            
+            // Korjattu vielä luennon jälkeen "bugi" mikä esti index URL:n ("/") käyttämisen selaimen kautta
             const resourceLocation = path === "/" ? "index.html" : path.slice(1)
           
             const html = readFileSync(resourceLocation, 'utf-8')
